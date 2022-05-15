@@ -1,0 +1,44 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "airbnb"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "jest"
+  ],
+  "rules": {
+    // https://github.com/prettier/eslint-config-prettier/issues/92 不會自動修復
+    "max-len": ["error", { "code": 150 }],
+    "react/jsx-one-expression-per-line": "off",
+    "import/extensions": "off",
+    "react/jsx-filename-extension": "off",
+    "no-unused-expressions": "off",
+    "no-unused-vars":"warn",
+    "linebreak-style":"off",
+    // https://stackoverflow.com/questions/42640636/react-must-be-in-scope-when-using-jsx-react-react-in-jsx-scope
+    // React > 17 可以安全關掉此規則
+    "react/react-in-jsx-scope": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
